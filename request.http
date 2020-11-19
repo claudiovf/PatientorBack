@@ -1,12 +1,14 @@
 # GET http://localhost:3003/api/patients
 
-POST http://localhost:3003/api/patients
-Content-Type: application/json
+# POST http://localhost:3003/api/patients
+# Content-Type: application/json
 
-{
-    "name": "John Patient",
-    "dateOfBirth": "1980-05-25",
-    "ssn": "300179-77B",
-    "gender": "male",
-    "occupation": "developer",
-}
+# {
+#     "name": "Mary Patient",
+#     "dateOfBirth": "1975-05-25",
+#     "ssn": "300179-77C",
+#     "gender": "female",
+#     "occupation": "developer"
+# }
+
+GET http://localhost:3003/api/patients/3
