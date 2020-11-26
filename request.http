@@ -11,4 +11,16 @@
 #     "occupation": "developer"
 # }
 
-GET http://localhost:3003/api/patients/3
+# GET http://localhost:3003/api/patients/2
+
+
+POST http://localhost:3003/api/patients/2/entries
+Content-Type: application/json
+
+{
+    "type": "Hospital",
+    "description": "Coding Rage",
+    "diagnosisCodes": ["S62.5"],
+    "specialist": "MD House",
+    "date": "2015-01-02"
+}

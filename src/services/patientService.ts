@@ -1,6 +1,7 @@
 import patientEntries from '../../data/patients';
 
-import { PatientEntry, PublicPatient, NewPatientEntry } from '../types';
+import { PatientEntry, PublicPatient, NewPatientEntry, NewEntry, HospitalEntry } from '../types';
+
 
 const getPatients = (): Array<PatientEntry> => {
     return patientEntries;
@@ -14,6 +15,19 @@ const addPatient = (entry: NewPatientEntry): PatientEntry => {
 
     patientEntries.push(newPatientEntry);
     return newPatientEntry;
+};
+
+const addEntry = (entryObj: NewEntry, patientId: number): HospitalEntry => {
+    const patient = patientEntries.find(p => p.id === patientId);
+    
+    const newEntry = {
+        id: Number(patient?.entries.length) + 1,
+        ...entryObj
+    };
+
+    
+    patient?.entries.push(newEntry);
+    return newEntry;
 };
 
 const getNoSsnPatients = (): PublicPatient[] => {
@@ -35,5 +49,6 @@ export default {
     getPatients,
     getNoSsnPatients,
     addPatient,
-    getPatientById
+    getPatientById,
+    addEntry
 };
